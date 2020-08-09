@@ -29,7 +29,7 @@ public class HessianUtils {
 	public static final byte[] methodToBytes(String method, Object... parameters) {
 		ByteArrayOutputStream bout = new ByteArrayOutputStream();
 		HessianOutput hout = new HessianOutput(bout);
-		hout.findSerializerFactory().setAllowNonSerializable(true);
+		hout.getSerializerFactory().setAllowNonSerializable(true);
 
 		try {
 			hout.call(method, parameters);
@@ -48,7 +48,7 @@ public class HessianUtils {
 
 			ByteArrayOutputStream hessianBytes = new ByteArrayOutputStream();
 			HessianOutput hout = new HessianOutput(hessianBytes);
-			hout.findSerializerFactory().setAllowNonSerializable(true);
+			hout.getSerializerFactory().setAllowNonSerializable(true);
 			hout.call(method, parameters);
 
 			GZIPOutputStream gzip = new GZIPOutputStream(bout);
