@@ -12,14 +12,3 @@
  * <http://www.gnu.org/licenses/> and specifically the Affero license
  * text at <http://www.gnu.org/licenses/agpl.html>.
  */
-package net.rptools.clientserver.simple.server;
-
-import net.rptools.clientserver.simple.client.ClientConnection;
-
-/** */
-public interface ServerObserver {
-
-  public void connectionAdded(ClientConnection conn);
-
-  public void connectionRemoved(ClientConnection conn);
-}
